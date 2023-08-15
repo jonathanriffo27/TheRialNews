@@ -1,5 +1,9 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: %i[show edit update destroy]
+  before_action :authenticate_user!, except: %i[index show]
+  before_action only: %i[edit update destroy] do
+    authorize_request(['admin'])
+  end
 
   # GET /comments or /comments.json
   def index
@@ -20,6 +24,7 @@ class CommentsController < ApplicationController
   # POST /comments or /comments.json
   def create
     @comment = Comment.new(comment_params)
+    @comment.user = current_user
 
     respond_to do |format|
       if @comment.save
