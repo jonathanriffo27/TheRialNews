@@ -1,6 +1,6 @@
 # Desafío - Mecanismos de autenticación y control de accesos en una aplicación web
 
-- Visita la [Web](https://real-news.onrender.com/)
+> Visita la [Web](https://real-news.onrender.com/)
 
 Este desafío tiene como objetivo poner en práctica los conocimientos y habilidades adquiridos en la unidad de mecanismos de autenticación y control de accesos en una aplicación web. Para ello, se debe crear una plataforma de noticias satíricas llamada "TheRialNews" que permita a los usuarios registrados dejar comentarios en las noticias y a los administradores eliminar comentarios inapropiados.
 
