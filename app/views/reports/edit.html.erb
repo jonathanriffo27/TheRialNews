@@ -1,10 +1,7 @@
-<h1>Editing report</h1>
-
+<h1>Editando Noticia</h1>
 <%= render "form", report: @report %>
-
 <br>
-
-<div>
-  <%= link_to "Show this report", @report %> |
-  <%= link_to "Back to reports", reports_path %>
+<div class='d-flex justify-content-end gap-2'>
+  <%= link_to "Mostrar esta noticia", @report, class: "btn btn-warning" %>
+  <%= link_to "Inicio", reports_path, class: "btn btn-warning" %>
 </div>

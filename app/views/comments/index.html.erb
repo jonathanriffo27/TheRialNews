@@ -1,14 +1,8 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Comments</h1>
-
-<div id="comments">
+<h1 class='mt-1'>Comentarios</h1>
+<div id="comments" class=' '>
   <% @comments.each do |comment| %>
-    <%= render comment %>
-    <p>
-      <%= link_to "Show this comment", comment %>
+    <p class='d-flex'>
+      <%= render comment %> <%= link_to "Mostrar comentario", comment%>
     </p>
   <% end %>
 </div>
-
-<%= link_to "New comment", new_comment_path %>

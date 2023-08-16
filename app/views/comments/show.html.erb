@@ -1,10 +1,6 @@
-<p style="color: green"><%= notice %></p>
-
 <%= render @comment %>
-
-<div>
-  <%= link_to "Edit this comment", edit_comment_path(@comment) %> |
-  <%= link_to "Back to comments", comments_path %>
-
-  <%= button_to "Destroy this comment", @comment, method: :delete %>
+<div class='d-flex gap-1'>
+  <%= link_to "Editar", edit_comment_path(@comment), class: "btn btn-secondary btn-sm" %>
+  <%= button_to "Eliminar", @comment, class: "btn btn-danger btn-sm", method: :delete %>
+  <%= link_to "Inicio", reports_path, class: "btn btn-warning btn-sm" %>
 </div>

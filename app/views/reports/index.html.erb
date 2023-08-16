@@ -1,11 +1,13 @@
-<p style="color: green"><%= notice %></p>
-<h1>Noticias </h1>
-<div id="reports">
+<h1>Real News</h1>
+<h5 class='mb-5'>Tu noticiero de confianza</h5>
+<div class="d-flex justify-content-end">
+  <%= link_to "Nueva noticia", new_report_path, class: "btn btn-secondary btn-sm mb-3" if user_signed_in? && current_user.role == 'admin' %>
+</div>
+<div id="reports" >
   <% @reports.each do |report| %>
     <%= render report %>
     <p>
-      <%= link_to "Show this report", report %>
+      <%= link_to "Ver mas", report, class: "btn btn-secondary btn-sm" %>
     </p>
   <% end %>
 </div>
-<%= link_to "Nuevo", new_report_path %>

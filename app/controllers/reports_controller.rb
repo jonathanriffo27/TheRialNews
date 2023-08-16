@@ -1,4 +1,5 @@
 class ReportsController < ApplicationController
+  before_action :authenticate_user!, except: %i[index show]
   before_action :set_report, only: %i[show edit update destroy]
   before_action only: %i[new create] do
     authorize_request(%w[author admin])

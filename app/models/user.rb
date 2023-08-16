@@ -6,4 +6,8 @@ class User < ApplicationRecord
 
   has_many :comments
   enum :role, %i[normal_user author admin]
+
+  def to_s
+    email
+  end
 end

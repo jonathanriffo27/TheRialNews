@@ -1,14 +1,26 @@
-<p style="color: green"><%= notice %></p>
-<%= render @report %>
-<p>Commentarios</p>
-<br>
-<%- @report.comments.each do |comment|%>
-  <%= comment.description%>
-  <br>
-<% end %>
-<%= render "comments/form", comment: @comment%>
-<div>
-  <%= link_to "Edit this report", edit_report_path(@report) %> |
-  <%= link_to "Back to reports", reports_path %>
-  <%= button_to "Destroy this report", @report, method: :delete %>
+<div class='mx-5 mb-4'>
+  <h1><%=@report.title%></h1>
+  <%= image_tag "https://loremflickr.com/1000/300" %>
+  <p class='fs-5 mt-3'><%=@report.description%><%=@report.description%><%=@report.description%></p>
+  <%- @report.comments.each do |comment|%>
+    <span class='fw-semibold'>
+      <%= comment.user %>
+    </span>
+    <%= comment.description %>
+    <%= link_to "Ver comentario", comment if user_signed_in? && current_user.role == 'admin' %> <br>
+  <% end %>
+  <% if user_signed_in? %>
+    <%= render "comments/form", comment: @comment%>
+  <% else %>
+    <p>Registrate para comentar</p>
+  <% end %>
+  <% if user_signed_in? && current_user.role == 'admin' %>
+    <div class='d-flex gap-2 justify-content-end mb-2'>
+      <%= link_to "Editar", edit_report_path(@report), class: "btn btn-secondary btn-sm" if current_user.role == 'admin' %>
+      <%= button_to "Eliminar", @report, class: "btn btn-secondary btn-sm ", method: :delete if current_user.role == 'admin' %>
+    </div>
+  <% end %>
+  <div class="d-flex justify-content-end">
+    <%= link_to "Inicio", reports_path, class: "btn btn-warning" %>
+  </div>
 </div>

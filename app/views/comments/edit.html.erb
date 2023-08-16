@@ -1,10 +1,7 @@
-<h1>Editing comment</h1>
-
+<h2>Editando comentario</h2>
 <%= render "form", comment: @comment %>
-
 <br>
-
 <div>
-  <%= link_to "Show this comment", @comment %> |
-  <%= link_to "Back to comments", comments_path %>
+  <%= link_to "Mostrar comentario", @comment, class: "btn btn-secondary btn-sm" %>
+  <%= link_to "Inicio", reports_path, class: "btn btn-warning btn-sm" %>
 </div>

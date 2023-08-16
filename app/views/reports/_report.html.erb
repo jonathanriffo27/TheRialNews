@@ -1,17 +1,10 @@
 <div id="<%= dom_id report %>">
-  <p>
-    <strong>Image:</strong>
-    <%= report.image %>
-  </p>
-
-  <p>
-    <strong>Title:</strong>
-    <%= report.title %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= report.description %>
-  </p>
-
+  <div class="card mb-3">
+    <%= image_tag "#{report.image}?random=#{report.id}", class:"card-img-top" %>
+    <div class="card-body">
+      <h5 class="card-title"><%= report.title %></h5>
+      <p class="card-text"><%= report.description %></p>
+      <p class="card-text"><small class="text-body-warning">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
 </div>
