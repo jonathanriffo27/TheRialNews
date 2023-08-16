@@ -1,6 +1,6 @@
 <div class='mx-5 mb-4'>
   <h1><%=@report.title%></h1>
-  <%= image_tag "https://loremflickr.com/1000/300" %>
+  <%= image_tag "https://loremflickr.com/1000/300", class:'my-4' %>
   <p class='fs-5 mt-3'><%=@report.description%><%=@report.description%><%=@report.description%></p>
   <%- @report.comments.each do |comment|%>
     <span class='fw-semibold'>
